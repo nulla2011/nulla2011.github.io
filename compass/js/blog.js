@@ -150,7 +150,7 @@ EventUtil.addHandler(window, "scroll", function() {
  		} else if (330 < scrolledTop && scrolledTop < tocMoveAlongPoint) {	
  			// toc 位置固定，不再滚动 
  			tocColumn.style.position = 'fixed';
- 			tocColumn.style.top = '150px';
+ 			tocColumn.style.top = '50px';
  			
  		} else if (scrolledTop >= tocMoveAlongPoint) {
  			// toc再次和正文一起滚动的临界点
@@ -170,7 +170,7 @@ EventUtil.addHandler(window, "scroll", function() {
 		// 找到出现视窗里头的出现的第一个heading<a>的parent<hx>的的id值，或者直接用<a>的href值
 		for (i=0; i<headings.length; i++) {
 			// 剪掉45px是为了更好的用户体验效果。
-			if (headings[i].offsetTop-45 >= scrolledTop) {
+			if (headings[i].offsetTop >= scrolledTop) {
 				currentHeadingHref = headings[i].href;
 				break;
 			} else {
