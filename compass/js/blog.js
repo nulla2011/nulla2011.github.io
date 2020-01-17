@@ -117,7 +117,7 @@ if (!headings || headings.length <=2 ) {
 	// 正文中最后一个标题的offsetTop, 用来让高亮持续
 	lastHeadingsTop = headings[headings.length-1].offsetTop;
 	// toc再次和正文一起滚动的临界点
-	tocMoveAlongPoint = lastHeadingsTop - 150;
+	tocMoveAlongPoint = lastHeadingsTop - 50;
 	
 }
 
@@ -142,12 +142,12 @@ EventUtil.addHandler(window, "scroll", function() {
  	// ==== 实现滚动完 banner 后，toc位置固定，直到最后一个标题距离视窗顶部150px，恢复toc 相对定位====开始
  	// 如果页面宽度不够，以下都不需要执行
  	if (pageWidth >= 768) {
- 		if (scrolledTop <= 330) {
+ 		if (scrolledTop <= 430) {
  			// 相对于#body-inner-wrapper而定位，和正文一起被滚动
  			tocColumn.style.position = 'absolute';
  			tocColumn.style.top = '480px';
  			
- 		} else if (330 < scrolledTop && scrolledTop < tocMoveAlongPoint) {	
+ 		} else if (430 < scrolledTop && scrolledTop < tocMoveAlongPoint) {	
  			// toc 位置固定，不再滚动 
  			tocColumn.style.position = 'fixed';
  			tocColumn.style.top = '50px';
