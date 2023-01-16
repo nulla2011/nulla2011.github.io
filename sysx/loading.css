@@ -39,21 +39,22 @@
 .loading-bar::after {
   content: '';
   background-image: radial-gradient(circle, #d3e5f1 2px, transparent 56px);
-  transform: translate(-50%);
-  animation: 1.5s linear 0s infinite bar;
+  transform: translate(0%);
+  animation: 1.5s linear -0.4s infinite bar;
 }
 @keyframes bar {
   from {
-    transform: translate(-50%);
+    transform: translate(-75%);
   }
   to {
-    transform: translate(50%);
+    transform: translate(75%);
   }
 }
 .animating-fadeout {
   animation-name: fade-out;
   animation-duration: 0.6s;
   animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 @keyframes fade-out {
   from {
